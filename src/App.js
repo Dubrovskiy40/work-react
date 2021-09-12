@@ -2,10 +2,10 @@ import Header from './Components/Header/Header';
 import Layout from './Components/Layout/Layout';
 import Footer from './Components/Footer/Footer';
 import PokemonCard from './Components/PokemonCard/PokemonCard';
-import style from'./App.css'
+import style from './app.module.css';
 
 import jpg1 from './Components/images/bg1.jpg';
-import jpg2 from './Components/images/bg2.jpg';
+import jpg2 from './Components/images/bg3.jpg';
 
 const POKEMONS = [
   {
@@ -144,7 +144,7 @@ const POKEMONS = [
 
 function App() {
   return (
-    <div className="App">
+    <div className={"App"}>
       <Header title='This is title' descr='This is Description!' />
       <Layout title='This is title' urlBg={jpg1}>
         <p>In the game two players face off against one another, one side playing as "blue", the other as "red" on a 3x3 grid.</p>
@@ -153,8 +153,7 @@ function App() {
       </Layout>
       <Layout title='This is title' colorBg={'#e2e2e2'}>
         <div className={style.flex}>
-          {/* <PokemonCard name='name' img='img' id='id' type='type' values='values' />) */}
-          {POKEMONS.map((item) => <PokemonCard key={item.id} {...item} />)}
+          {POKEMONS.map((item) => <PokemonCard key={item.id} name={item.name} id={item.id} type={item.type} values={item.values} />)}
         </div>
       </Layout>
       <Layout title='This is title' urlBg={jpg2}>
